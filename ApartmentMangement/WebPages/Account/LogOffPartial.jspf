@@ -1,0 +1,16 @@
+<li class="dropdown" id="LoggedIn">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <b>Hello {{ UserName }} !</b>
+        <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="#"> Settings</a></li>
+        <li>
+            <a href="#">Manage profile</a>
+        </li>
+        <li>
+            <form id="logoutForm" action="Account/LogOffController" method="post">
+                <a class="LogOff" href="javascript:document.getElementById('logoutForm').submit()">LogOff</a>
+            </form>
+        </li>
+    </ul>
+</li>

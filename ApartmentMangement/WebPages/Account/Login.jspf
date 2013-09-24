@@ -1,0 +1,96 @@
+<h3 class="span2">Login</h3>
+<div class="span4"></div>
+<h3 class="span4">Register</h3>
+<script type="text/javascript">
+    window.onload = function () {
+        //        $.ajax({
+        //            url: "/Account/IsLoggedIn"
+        //
+        //        }).done(function (data) {
+        //            if (data.IsLoggedIn) {
+        //                alert("A user is already logged in!. Please log off to login with different user");
+        //                window.history.back();
+        //            }
+        //        });
+    }
+</script>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span6">
+            <form name="LoginForm" class="account-box" action="Account/Login" method="post">
+                <input name="__RequestVerificationToken" type="hidden" value="vLRTgiuNaLO4dSVfbFFTKP-cOlqCB_U7A9P3Q1VSMGOSr0Pr4y7v-FtOeTYfkXdK88Sg1iiK_nOiqTNbKPK1tFDXOdr4bMbhFHA7kWaq_Sk1" />
+
+                <h3>Use a local account.</h3>
+                <label for="UserName">User name</label>
+                <input class="input-block-level" id="UserName" name="Login_UserName" type="text" required ng-model="loginModel.Login_UserName" />
+                <span class="error-message" ng-show="LoginForm.Login_UserName.$error.required && LoginForm.Login_UserName.$dirty">Username required.!</span>
+                <label for="Password">Password</label>
+                <input class="input-block-level" id="Password" name="Login_Password" type="password" required  ng-model="loginModel.Login_Password"  />
+                <span class="error-message" ng-show="LoginForm.Login_Password.$dirty && LoginForm.Login_Password.$error.required">Password required.!</span><br />
+                <label class="checkbox">
+                    <input id="RememberMe" ng-model="loginModel.Login_RememberMe" name="Login_RememberMe" type="checkbox" value="{{loginModel.Login_RememberMe}}"/>
+                    Remember me
+                </label>
+                <div>
+                    <button class="btn btn-large btn-primary" type="submit">Sign In</button>
+                </div>
+                <br>
+
+            </form>
+        </div>
+        <div style="min-height: 250px; float: left; background-image: url('Content/Images/verticalLine.jpg');">
+            <div style="padding-left:5px;min-width:5px"></div>
+        </div>
+        <div class="span5">
+            <div class="account-box">
+                <h4>If you have don't an account. Register here</h4>
+
+
+                <div class="content">
+
+                    <div class="container">
+                        <div class="span6">
+                            <form name="RegisterForm" action="/Account/Register" class="account-box" method="post">
+                                <input name="__RequestVerificationToken" type="hidden" value="K5osObPIGqCqp-w5-Wf737ye5UEfyWDIYQqgC9ENl66udTmgI4_Nzpi97IPcHDMpxt3K5K7CzFLzkG6GWS2jaYBJr1mCZ-sQviXqMBKPKlI1" />
+                                <div class="validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+                                    </ul></div>
+                                <label for="UserName">User name</label>
+                                <input class="input-block-level" id="Register_UserName" ng-model="registerModel.Register_UserName" name="Register_UserName" type="text" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required />
+                                <span class="error-message" ng-show="RegisterForm.Register_UserName.$error.required && RegisterForm.Register_UserName.$dirty">Username required.!</span>
+                                <span class="error-message" ng-show="!RegisterForm.Register_UserName.$error.minLength && !RegisterForm.Register_UserName.$error.maxLength && RegisterForm.Register_UserName.$error.pattern && RegisterForm.Register_UserName.$dirty">Must start with a letter, and contain letters and numbers only.</span>
+                                <span class="error-message" ng-show="!RegisterForm.Register_UserName.$error.required && (RegisterForm.Register_UserName.$error.minlength || RegisterForm.Register_UserName.$error.maxlength) && RegisterForm.Register_UserName.$dirty">Username must be between 5 and 20 characters.</span>
+
+                                <label for="EmailId">Mobile</label>
+                                <input id="MobileNo" ng-model="registerModel.MobileNo" name="MobileNo" type="number" class="input-block-level"
+                                       ng-minlength="10" ng-maxlength="10" required />
+                                <span class="error-message" ng-show="RegisterForm.EmailId.$error.required && RegisterForm.EmailId.$dirty">Mobile No required.!</span>
+                                <span class="error-message" ng-show="!RegisterForm.EmailId.$error.required && RegisterForm.EmailId.$error.email && RegisterForm.EmailId.$dirty">Invalid email id.</span>
+
+                                <!--                <label for="Password">Password</label>
+                                                <input id="Password" ng-model="registerModel.Password" type="password" class="input-block-level" name="Password" required
+                                                    ng-minlength="6" ng-maxlength="100" title="6 to 100 characters" />
+                                                <span class="error-message" ng-show="RegisterForm.Password.$dirty && RegisterForm.Password.$error.required">Passwor required.!</span><br />
+                                                <span class="error-message" ng-show="RegisterForm.Password.$error.minlength">Too short!</span>
+
+                                                <label for="ConfirmPassword">Confirm password</label>
+                                                <input id="ConfirmPassword" ng-model="registerModel.ConfirmPassword" type="password" class="input-block-level" name="ConfirmPassword" required
+                                                    ng-minlength="6" ng-maxlength="100" title="6 to 100 characters" />
+                                                <span class="error-message" ng-show="RegisterForm.ConfirmPassword.$dirty && RegisterForm.ConfirmPassword.$error.minlength">Too short!</span>
+                                                <span class="error-message" ng-show="RegisterForm.ConfirmPassword.$dirty && RegisterForm.ConfirmPassword.$error.required">Retype password.</span>
+                                                <div class="error-message" ng-show="(RegisterForm.Password.$dirty && RegisterForm.ConfirmPassword.$dirty) && (registerModel.Password != registerModel.ConfirmPassword)">
+                                                    <span class="error-message">The password and confirmation password do not match.</span>
+                                                </div>-->
+
+                                <div>
+                                    <br />
+                                    <button class="btn btn-large btn-primary" type="submit">Send code to register mobile</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
