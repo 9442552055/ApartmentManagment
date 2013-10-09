@@ -1,1 +1,49 @@
-<h3>Home Page</h3>
+<div class="span12">
+    <h3>Maarsh products</h3>
+
+    <!--    <div class="rn-carousel-container" style="width: 400px;">
+            <ul rn-carousel class="image">
+                <li ng-repeat="image in sportImages" style="background-image:url({{ image }});">
+                    <div class="layer">{{ image }}</div>
+                </li>
+    <li>slide #1</li>
+    <li>slide #2</li>
+    <li>slide #3</li>
+            </ul>
+
+        </div>-->
+
+    <div class="products_box">
+        &nbsp;<h4>Asset Management</h4>
+        <p>
+            "Maarsh Infotech specializes in the business of providing Software, Outsourcing Offshore Software Development services to its clients globally. Our expertise lies in reducing costs and enhancing productivity by bringing the strategic advantage of Software Outsourcing and Offshore Software Development to the very doorsteps of our customers in more ways than one. By improving reliability, speed and agility, we enable our customers to achieve sustainable differential advantage over their competitors."
+        </p>
+    </div>
+    <br>
+
+    <div>
+        <ul>
+            <li>
+                Residential and Commercial property Management software
+            </li>
+            <li>
+                Property Manager® is a proven solution for companies managing all types of multi-family or commercial properties.
+            </li>
+            <li>
+                Property Manager® helps you increase your productivity by organizing your Tenant information, rental information and automating your accounting and reporting.
+            </li>
+            <li>
+                Follow tenants through entire lease period.
+            </li>
+            <li>
+                Print reports on Tenant information, rent paid and outstanding due on rent with desired format.
+            </li>
+            <li>
+                Receive a lifetime of free upgrades and support from Maarsh's Online Community.
+            </li>
+            <li>
+                Manage Property, Tenant and Rent information with our automated system at ease.
+            </li>
+        </ul>
+    </div>
+</div>

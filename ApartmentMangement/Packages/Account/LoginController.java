@@ -6,6 +6,7 @@ package Account;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.persistence.EntityTransaction;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -73,6 +74,8 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         String Login_UserName = request.getParameter("Login_UserName");
         String Login_Password = request.getParameter("Login_Password");
+        LoginModel model = new LoginModel();
+
         javax.servlet.http.HttpSession session = request.getSession(true);
         session.setAttribute("Login_UserName", Login_UserName);
         response.sendRedirect("/");

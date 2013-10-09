@@ -1,6 +1,6 @@
-<h3 class="span2">Login</h3>
-<div class="span4"></div>
-<h3 class="span4">Register</h3>
+<h3 class="span12">Login</h3>
+<!--<div class="span4"></div>
+<h3 class="span4">Register</h3>-->
 <script type="text/javascript">
     window.onload = function () {
         //        $.ajax({
@@ -16,7 +16,8 @@
 </script>
 <div class="container">
     <div class="row-fluid">
-        <div class="span6">
+        <div class="offset2"></div>
+        <div class="span5">
             <form name="LoginForm" class="account-box" action="Account/Login" method="post">
                 <input name="__RequestVerificationToken" type="hidden" value="vLRTgiuNaLO4dSVfbFFTKP-cOlqCB_U7A9P3Q1VSMGOSr0Pr4y7v-FtOeTYfkXdK88Sg1iiK_nOiqTNbKPK1tFDXOdr4bMbhFHA7kWaq_Sk1" />
 
@@ -38,7 +39,7 @@
 
             </form>
         </div>
-        <div style="min-height: 250px; float: left; background-image: url('Content/Images/verticalLine.jpg');">
+<!--        <div style="min-height: 250px; float: left; background-image: url('Content/Images/verticalLine.jpg');">
             <div style="padding-left:5px;min-width:5px"></div>
         </div>
         <div class="span5">
@@ -66,7 +67,7 @@
                                 <span class="error-message" ng-show="RegisterForm.EmailId.$error.required && RegisterForm.EmailId.$dirty">Mobile No required.!</span>
                                 <span class="error-message" ng-show="!RegisterForm.EmailId.$error.required && RegisterForm.EmailId.$error.email && RegisterForm.EmailId.$dirty">Invalid email id.</span>
 
-                                <!--                <label for="Password">Password</label>
+                                                <label for="Password">Password</label>
                                                 <input id="Password" ng-model="registerModel.Password" type="password" class="input-block-level" name="Password" required
                                                     ng-minlength="6" ng-maxlength="100" title="6 to 100 characters" />
                                                 <span class="error-message" ng-show="RegisterForm.Password.$dirty && RegisterForm.Password.$error.required">Passwor required.!</span><br />
@@ -79,7 +80,7 @@
                                                 <span class="error-message" ng-show="RegisterForm.ConfirmPassword.$dirty && RegisterForm.ConfirmPassword.$error.required">Retype password.</span>
                                                 <div class="error-message" ng-show="(RegisterForm.Password.$dirty && RegisterForm.ConfirmPassword.$dirty) && (registerModel.Password != registerModel.ConfirmPassword)">
                                                     <span class="error-message">The password and confirmation password do not match.</span>
-                                                </div>-->
+                                                </div>
 
                                 <div>
                                     <br />
@@ -91,6 +92,6 @@
                 </div>
 
             </div>
-        </div>
+        </div>-->
     </div>
 </div>

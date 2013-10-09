@@ -1,0 +1,150 @@
+<div class="span12" ng-controller="ApartmentDetailController">
+
+    <h4>Add Property</h4>
+    <br>
+    <div class="row-fluid">
+        <div class="span2">
+            <span> First name:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="firstname">
+        </div>
+        <div class="span2 offset3">
+            <span>Last name:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="lastname">
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <span> Address1:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="address1">
+        </div>
+        <div class="span2 offset3">
+            <span>Address2:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="addres2">
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <span> City:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="city">
+        </div>
+        <div class="span2 offset3">
+            <span>State:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="state">
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            <span> Pin Code:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="pinCode">
+        </div>
+        <div class="span2 offset3">
+            <span>Purchase Date:</span>
+        </div>
+        <div class="span1">
+            <input type="text" name="purchasedate">
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <input class="span2 btn-primary" type="submit" value="Add Unit" >
+        
+        <!--        <div class="span2">
+                    <input class="btn-primary" type="submit" value="Add Unit" align="right">
+                </div>
+                <div class="span1">
+                    <input class="btn-primary" type="submit" value="Remove Unit">
+                </div>-->
+    </div>
+    <br />
+    <!--    <div class="row-fluid">
+            <div class="span1">
+                <input  type="checkbox">
+            </div>
+            <div class="span1">
+
+            </div>
+            <div class="span2 offset3">
+
+            </div>
+            <div class="span1 offset2">
+
+            </div>
+            <div class="span2">
+
+            </div>
+        </div>-->
+    <div >
+        <div class="row-fluid" >
+            <div class="accordion">
+                <div class="accordion-group ng-scope" ng-repeat="item in Items" >
+                    <!-- Collapse Heading -->
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#{{item}}" href="#{{item}}">
+                            <span class="title ng-binding">Unit ID:  {{item}}
+                               
+                                <span class="ico-pull pull-right span1">
+                                    <i class="icon-chevron-up"></i>
+                                </span>
+                                 <span class="ico-pull pull-right span1">
+                                    <i class="icon-remove-sign"></i>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <!-- Collapse Content -->
+                    <div id="{{item}}" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            <ul class="thumbnail-info" >
+                                <li>
+                                    <h5>
+                                        <span class="span4"> Unit ID:   </span>
+                                        <span >{{item}} </span>
+                                    </h5>
+                                </li>
+                                <li>
+                                    <span class="span4">Unit Name:</span>
+                                    <input class="span3" type="text" name="UnitName{{item}}">
+                                </li>
+                                <li>
+                                    <span class="span4">Status:</span>
+                                    <input  type="checkbox" name="Status{{item}}">
+                                </li>
+                                <li>
+                                    <span class="span4">Occupancy Status:</span>
+                                    <input  type="checkbox" name="OccupancyStatus{{item}}">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <br>
+        <center>
+            <input class="span2 btn-primary" type="submit" value="SAVE" >
+            <input class="span2 btn-primary" type="submit" value="CANCEL" >
+        </center>
+    </div>
+    <div align="left">
+        <br>
+    </div>
+</div>

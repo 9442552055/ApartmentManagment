@@ -1,0 +1,40 @@
+<div class="span12 row-fluid" ng-controller="ContextController">
+
+    <div class="span3" id="contextPanel" >
+        <div class="accordion">
+            <div class="accordion-group ng-scope" ng-repeat="contextItem in ContextItems" >
+                <!-- Collapse Heading -->
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#{{contextItem}}" href="#{{contextItem}}">
+                        <span class="title ng-binding">{{contextItem}}
+                            <span class="ico-pull pull-right">
+                                <i class="icon-chevron-up"></i>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <!-- Collapse Content -->
+                <div id="{{contextItem}}" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <div class="ContextLink" ng-click="listApartment(contextItem);">
+                            <img src="../Content/Images/Add.png">
+                            List
+                        </div>
+
+                        <div class="ContextLink" ng-click="createApartment(contextItem);">
+                            <img src="../Content/Images/Add.png">
+                            Create
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offset1"></div>
+    <div class="span8" id="contentPanel">
+        <div ng-include="templateUrl" >
+           
+        </div>
+    </div>
+</div>
