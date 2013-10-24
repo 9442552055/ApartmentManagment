@@ -12,7 +12,18 @@
         <servlet-name>LogOffController</servlet-name>
         <servlet-class>Account.LogOffController</servlet-class>
     </servlet>
+    
+     <servlet>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <url-pattern>/Api/*</url-pattern>
+    </servlet-mapping>
+
+  <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/Account/Login</url-pattern>
     </servlet-mapping>
@@ -24,9 +35,5 @@
         <servlet-name>LogOffController</servlet-name>
         <url-pattern>/Account/LogOffController</url-pattern>
     </servlet-mapping>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
+ 
 </web-app>

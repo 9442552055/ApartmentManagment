@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--http://docs.jboss.org/hibernate/orm/3.3/reference/en/html/associations.html-->
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name="AMS.Entities.Unit" table="Units">
+        <meta attribute="class-description">
+         This class contains the Apartment Unit detail.
+        </meta>
+        <id name="id" type="long" column="idUnit">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="name" type="string"/>
+        <property name="occupyable" column="occupyable" type="boolean"/>
+        <property name="isOccupied" column="isOccupied" type="boolean"/>
+        <many-to-one name="apartment" column="apartment" class="AMS.Entities.Apartment" />
+
+        <property name="createdBy" column="createdBy" type="string"/>
+        <property name="modifiedBy" column="modifiedBy" type="string"/>
+        <property name="createdDate" column="createdDate" type="timestamp"/>
+        <property name="modifiedDate" column="modifiedDate" type="timestamp"/>
+    </class>
+    <class name="AMS.Entities.Address" table="Addresses">
+        <meta attribute="class-description">
+         This class contains the Address detail.
+        </meta>
+        <id name="id" type="long" column="idAddress">
+            <generator class="native"/>
+        </id>
+      
+        <property name="addressLine1" column="addressLine1" type="string"/>
+        <property name="addressLine2" column="addressLine2" type="string"/>
+        <property name="zipCode" column="zipCode" type="long"/>
+        <property name="stateName" column="stateName" type="string"/>
+        <property name="country" column="country" type="string"/>
+
+        <property name="createdBy" column="createdBy" type="string"/>
+        <property name="modifiedBy" column="modifiedBy" type="string"/>
+        <property name="createdDate" column="createdDate" type="timestamp"/>
+        <property name="modifiedDate" column="modifiedDate" type="timestamp"/>
+    </class>
+    <class name="AMS.Entities.Contact" table="Contacts">
+        <meta attribute="class-description">
+         This class contains the Contacts detail linked to Addresses.
+        </meta>
+        <id name="id" type="long" column="idContact">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="name" type="string"/>
+        <property name="primaryMobileNo" column="primaryMobileNo" type="string"/>
+        <property name="alternativeMobileNo" column="alternativeMobileNo" type="string"/>
+        <property name="primaryMailId" column="primaryMailId" type="string"/>
+        <property name="alternativeMailId" column="alternativeMailId" type="string"/>
+        <many-to-one name="currentAddress" column="currentAddress" class="AMS.Entities.Address" />
+
+        <property name="createdBy" column="createdBy" type="string"/>
+        <property name="modifiedBy" column="modifiedBy" type="string"/>
+        <property name="createdDate" column="createdDate" type="timestamp"/>
+        <property name="modifiedDate" column="modifiedDate" type="timestamp"/>
+    </class>
+    <class name="AMS.Entities.Apartment" table="Apartments">
+        <meta attribute="class-description">
+            This class contains the Apartments detail linked to Units.
+        </meta>
+        <id name="id" type="long" column="idApartment">
+            <generator class="native"/>
+        </id>
+
+        <set name="units">
+            <key column="apartment" />
+            <one-to-many class="AMS.Entities.Unit" />
+        </set>
+        <many-to-one name="apartmentAddress" column="apartmentAddress" class="AMS.Entities.Address"  insert="false" update="false"/>
+        <many-to-one name="ownerContact" column="ownerContact" class="AMS.Entities.Contact"  insert="false" update="false"/>
+        <property name="name" column="name" type="string"/>
+        <property name="apartmentAddressId" column="apartmentAddress" type="long"/>
+        <property name="ownerContactId" column="ownerContact" type="long"/>
+
+        <property name="createdBy" column="createdBy" type="string"/>
+        <property name="modifiedBy" column="modifiedBy" type="string"/>
+        <property name="createdDate" column="createdDate" type="timestamp"/>
+        <property name="modifiedDate" column="modifiedDate" type="timestamp"/>
+    </class>
+</hibernate-mapping>

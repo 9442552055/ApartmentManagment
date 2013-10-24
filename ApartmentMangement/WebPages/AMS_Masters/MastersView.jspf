@@ -1,0 +1,13 @@
+<div class="span12 row-fluid" ng-controller="ContextController">
+
+    <div  ng-include="contextUrl" >
+        
+    </div>
+
+    <div class="offset1"></div>
+    <div class="span8" id="contentPanel">
+        <div ng-include="templateUrl" >
+           
+        </div>
+    </div>
+</div>

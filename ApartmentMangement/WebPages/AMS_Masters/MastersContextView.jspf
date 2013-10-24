@@ -1,0 +1,33 @@
+<div class="span3" id="contextPanel" >
+    <div class="accordion">
+        <div class="accordion-group ng-scope" ng-repeat="contextItem in ContextItems" >
+            <!-- Collapse Heading -->
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#{{contextItem.Text}}" href="#{{contextItem.Text}}">
+                    <span class="title ng-binding">{{contextItem.Text}}
+                        <span class="ico-pull pull-right">
+                            <i class="icon-chevron-up"></i>
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <!-- Collapse Content -->
+            <div id="{{contextItem.Text}}" class="accordion-body collapse"  ng-class="{in: {{contextItem.Text == currentModule}} }" >
+                <div class="accordion-inner">
+                    <!--<div class="ContextLink" ng-click="button.Click(contextItem);" ng-repeat="button in contextItem.buttons">
+                          <img src="../Content/Images/Add.png">{{button.Text}}</div>-->
+                    <ul class="ContextLink" 
+                        ng-repeat="button in contextItem.buttons"
+                        ng-class="{ContextLinkActive: {{contextItem.Text == currentModule && button.Text==currentAction}} }">
+                        <li>
+                            <a class="span12" href="#/Masters/{{contextItem.Text}}/{{button.Text}}" ng-class="{active: {{contextItem.Text == currentModule && button.Text==currentAction}} }">
+                                <img src="../Content/Images/Add.png">{{'  '+button.Text}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

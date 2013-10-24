@@ -1,0 +1,16 @@
+<div ng-controller="MasterListController">
+    <!--    <ul class="thumbnail thumbnail-info" ng-repeat="row in rows">
+            <li ng-repeat="col in row.columns" class="row-fluid">
+                <span class="bold-label">{{col.Name}}</span>
+                <span class=".offset2"> value {{$index}}</span>
+            </li>
+        </ul>-->
+    <style>
+        .gridStyle {
+            border: 1px solid rgb(212,212,212);
+            min-height:  240px ! important;
+            overflow: hidden;
+        }
+    </style>
+    <div class="gridStyle"  ng-grid="gridOptions"></div>
+</div>

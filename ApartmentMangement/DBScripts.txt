@@ -1,0 +1,51 @@
+delimiter $$
+
+CREATE TABLE `units` (
+  `idUnit` bigint(20) NOT NULL auto_increment,
+  `Name` varchar(45) NOT NULL,
+  `Occupyable` bit(1) NOT NULL default '',
+  `IsOccupied` bit(1) NOT NULL default '\0',
+  `CreatedDate` timestamp NULL default NULL,
+  `CreatedBy` varchar(45) default NULL,
+  `ModifiedDate` timestamp NULL default NULL,
+  `ModifiedBy` varchar(45) default NULL,
+  PRIMARY KEY  (`idUnit`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COMMENT='Flat info'$$
+
+delimiter $$
+
+CREATE TABLE `addresses` (
+  `idAddress` bigint(20) NOT NULL auto_increment,
+  `addressLine1` varchar(45) default NULL,
+  `addressLine2` varchar(45) default NULL,
+  `zipCode` bigint(20) default NULL,
+  `stateName` varchar(45) default NULL,
+  `country` varchar(45) default NULL,
+  `createdBy` varchar(45) default NULL,
+  `modifiedBy` varchar(45) default NULL,
+  `createdDate` timestamp NULL default NULL,
+  `modifiedDate` timestamp NULL default NULL,
+  PRIMARY KEY  (`idAddress`),
+  UNIQUE KEY `idAddress_UNIQUE` (`idAddress`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT=' This table contains the Address detail.'$$
+
+delimiter $$
+
+CREATE TABLE `contacts` (
+  `idContact` bigint(20) NOT NULL auto_increment,
+  `name` varchar(45) NOT NULL,
+  `primaryMobileNo` varchar(12) default NULL,
+  `alternativeMobileNo` varchar(12) default NULL,
+  `primaryMailId` varchar(45) default NULL,
+  `alternativeMailId` varchar(45) default NULL,
+  `currentAddress` bigint(20) default NULL,
+  `createdBy` varchar(45) default NULL,
+  `modifiedBy` varchar(45) default NULL,
+  `createdDate` timestamp NULL default NULL,
+  `modifiedDate` timestamp NULL default NULL,
+  PRIMARY KEY  (`idContact`),
+  UNIQUE KEY `idContact_UNIQUE` (`idContact`),
+  KEY `FK_CONTACT_ADDRESS` (`currentAddress`),
+  CONSTRAINT `FK_CONTACT_ADDRESS` FOREIGN KEY (`currentAddress`) REFERENCES `addresses` (`idAddress`) ON DELETE SET NULL ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COMMENT=' This class contains the Contacts detail linked to Addresses'$$
+

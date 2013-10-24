@@ -1,0 +1,9 @@
+<div class="row-fluid">
+    <div class="span3" ui-view="ContextPane">
+
+    </div
+
+    <div class="span9" ui-view="Content-Pane">
+
+    </div>
+</div>

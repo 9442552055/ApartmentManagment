@@ -1,4 +1,4 @@
-<div class="span12" ng-controller="ApartmentDetailController">
+<div id="ApartmentDetail" class="span12" ng-controller="ApartmentDetailController">
 
     <h4>Add Property</h4>
     <br>
@@ -61,7 +61,7 @@
     <br />
     <div class="row-fluid">
         <input class="span2 btn-primary" type="submit" value="Add Unit" >
-        
+
         <!--        <div class="span2">
                     <input class="btn-primary" type="submit" value="Add Unit" align="right">
                 </div>
@@ -92,14 +92,16 @@
             <div class="accordion">
                 <div class="accordion-group ng-scope" ng-repeat="item in Items" >
                     <!-- Collapse Heading -->
-                    <div class="accordion-heading">
+                    <div class="accordion-heading row-fluid">
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#{{item}}" href="#{{item}}">
-                            <span class="title ng-binding">Unit ID:  {{item}}
-                               
+                            <span class="title ng-bindin row-fluid">
+                                <span class="span2">
+                                Unit ID:  {{item}}
+                                </span>
                                 <span class="ico-pull pull-right span1">
                                     <i class="icon-chevron-up"></i>
                                 </span>
-                                 <span class="ico-pull pull-right span1">
+                                <span class="pull-right span1">
                                     <i class="icon-remove-sign"></i>
                                 </span>
                             </span>
@@ -108,24 +110,32 @@
                     <!-- Collapse Content -->
                     <div id="{{item}}" class="accordion-body collapse">
                         <div class="accordion-inner">
-                            <ul class="thumbnail-info" >
+                            <ul class="thumbnail-info">
                                 <li>
-                                    <h5>
-                                        <span class="span4"> Unit ID:   </span>
+                                    <h5 class="row-fluid">
+                                        <span class="span3 form-label"> Unit ID:   </span>
                                         <span >{{item}} </span>
                                     </h5>
                                 </li>
                                 <li>
-                                    <span class="span4">Unit Name:</span>
-                                    <input class="span3" type="text" name="UnitName{{item}}">
+                                    <div class="row-fluid">
+                                        <span class="span3 form-label">Unit Name:</span>
+                                        <input  type="text" name="UnitName{{item}}">
+                                    </div>
+
                                 </li>
                                 <li>
-                                    <span class="span4">Status:</span>
-                                    <input  type="checkbox" name="Status{{item}}">
+                                    <div class="row-fluid">
+                                        <span class="span3 form-label">Status:</span>
+                                        <input  type="checkbox" name="Status{{item}}">
+                                    </div>
                                 </li>
                                 <li>
-                                    <span class="span4">Occupancy Status:</span>
-                                    <input  type="checkbox" name="OccupancyStatus{{item}}">
+                                    <div class="row-fluid">
+                                        <span class="span3 form-label">Occupancy Status:</span>
+                                        <input  type="checkbox" name="OccupancyStatus{{item}}">
+                                    </div>
+
                                 </li>
                             </ul>
                         </div>
